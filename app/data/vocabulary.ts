@@ -1,0 +1,46 @@
+export type Vocabulary = {
+  id: string;
+  japanese: string;
+  chinese: string;
+  romaji: string;
+  category: string;
+  example: string;
+  exampleTranslation: string;
+};
+
+export const vocabularies: Vocabulary[] = [
+  // 材质面料
+  { id: "v001", japanese: "ナイロン", chinese: "尼龙", romaji: "nairon", category: "材质面料", example: "このバッグはナイロン製です。", exampleTranslation: "这个包是尼龙材质的。" },
+  { id: "v002", japanese: "ポリエステル", chinese: "涤纶", romaji: "poriesuteru", category: "材质面料", example: "ポリエステル生地は耐久性があります。", exampleTranslation: "涤纶面料很耐用。" },
+  { id: "v003", japanese: "PUレザー", chinese: "PU皮革", romaji: "pī yū rezā", category: "材质面料", example: "PUレザーは本革より安価です。", exampleTranslation: "PU皮比真皮便宜。" },
+  { id: "v004", japanese: "本革", chinese: "真皮", romaji: "hongawa", category: "材质面料", example: "本革のバッグは高級感があります。", exampleTranslation: "真皮包很有高级感。" },
+  { id: "v005", japanese: "キャンバス", chinese: "帆布", romaji: "kyanabasu", category: "材质面料", example: "キャンバス地のトートバッグ。", exampleTranslation: "帆布托特包。" },
+  
+  // 五金配件
+  { id: "v006", japanese: "ファスナー", chinese: "拉链", romaji: "fasunā", category: "五金配件", example: "YKKファスナーを使用しています。", exampleTranslation: "使用YKK拉链。" },
+  { id: "v007", japanese: "バックル", chinese: "扣具", romaji: "bakkuru", category: "五金配件", example: "バックルの品質が重要です。", exampleTranslation: "扣具的质量很重要。" },
+  { id: "v008", japanese: "Dカン", chinese: "D型环", romaji: "dī kan", category: "五金配件", example: "Dカンでストラップを取り付けます。", exampleTranslation: "用D型环安装背带。" },
+  { id: "v009", japanese: "マグネット", chinese: "磁扣", romaji: "magunetto", category: "五金配件", example: "マグネット式の開閉。", exampleTranslation: "磁扣式开合。" },
+  { id: "v010", japanese: "金具", chinese: "金属配件", romaji: "kanagu", category: "五金配件", example: "金具はすべてニッケルフリーです。", exampleTranslation: "所有金属配件都是无镍的。" },
+  
+  // 产品类型
+  { id: "v011", japanese: "バックパック", chinese: "双肩包", romaji: "bakkupakku", category: "产品类型", example: "通勤用のバックパック。", exampleTranslation: "通勤用双肩包。" },
+  { id: "v012", japanese: "トートバッグ", chinese: "托特包", romaji: "tōtobaggu", category: "产品类型", example: "A4サイズが入るトートバッグ。", exampleTranslation: "能装A4尺寸的托特包。" },
+  { id: "v013", japanese: "スーツケース", chinese: "行李箱", romaji: "sūtsukēsu", category: "产品类型", example: "機内持ち込み可能なスーツケース。", exampleTranslation: "可带上飞机的行李箱。" },
+  { id: "v014", japanese: "ショルダーバッグ", chinese: "单肩包", romaji: "shorudābaggu", category: "产品类型", example: "斜めがけできるショルダーバッグ。", exampleTranslation: "可斜挎的单肩包。" },
+  { id: "v015", japanese: "ウエストポーチ", chinese: "腰包", romaji: "uesutopōchi", category: "产品类型", example: "旅行に便利なウエストポーチ。", exampleTranslation: "旅行方便的腰包。" },
+  
+  // 工艺术语
+  { id: "v016", japanese: "縫製", chinese: "缝制", romaji: "hōsei", category: "工艺术语", example: "縫製の品質を確認してください。", exampleTranslation: "请确认缝制质量。" },
+  { id: "v017", japanese: "裏地", chinese: "内衬", romaji: "uraji", category: "工艺术语", example: "裏地はポリエステル製です。", exampleTranslation: "内衬是涤纶材质。" },
+  { id: "v018", japanese: "刺繍", chinese: "刺绣", romaji: "shishū", category: "工艺术语", example: "ロゴを刺繍で入れます。", exampleTranslation: "用刺绣加上logo。" },
+  { id: "v019", japanese: "プリント", chinese: "印刷", romaji: "purinto", category: "工艺术语", example: "シルクスクリーンプリント。", exampleTranslation: "丝网印刷。" },
+  { id: "v020", japanese: "防水加工", chinese: "防水处理", romaji: "bōsui kakō", category: "工艺术语", example: "防水加工を施しています。", exampleTranslation: "进行了防水处理。" },
+  
+  // 商务用语
+  { id: "v021", japanese: "納期", chinese: "交期", romaji: "nōki", category: "商务用语", example: "納期は90日です。", exampleTranslation: "交期是90天。" },
+  { id: "v022", japanese: "最小ロット", chinese: "最小起订量", romaji: "saisho rotto", category: "商务用语", example: "最小ロットは500個です。", exampleTranslation: "最小起订量是500个。" },
+  { id: "v023", japanese: "サンプル", chinese: "样品", romaji: "sanpuru", category: "商务用语", example: "サンプルを送付いたします。", exampleTranslation: "将寄送样品。" },
+  { id: "v024", japanese: "見積もり", chinese: "报价", romaji: "mitsumori", category: "商务用语", example: "見積もりをお願いします。", exampleTranslation: "请报价。" },
+  { id: "v025", japanese: "単価", chinese: "单价", romaji: "tanka", category: "商务用语", example: "単価はいくらですか。", exampleTranslation: "单价是多少？" },
+];
