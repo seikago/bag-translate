@@ -1,0 +1,18 @@
+{
+  "runtime": "edge",
+  "name": "api/chat",
+  "deploymentTarget": "v8-worker",
+  "entrypoint": "index.js",
+  "assets": [],
+  "framework": {
+    "slug": "nextjs",
+    "version": "15.1.6"
+  },
+  "environment": {
+    "__NEXT_BUILD_ID": "GJojtKahlx6bc0RAg-a7r",
+    "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "k6xQtq8oUWxhxlz6TZBeOUS0vROfLYxSXdPjeIh/JOY=",
+    "__NEXT_PREVIEW_MODE_ID": "09fac0c3db4c05fc6c1e68c3142dfdaf",
+    "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "ba7aa3991ff3168e5f38e8711229cfa5b0fd4024389151244ca8dac459584697",
+    "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3fc9b807720333d4c144cd37ddce1763e33739dba69f09b02a8c67357d0165c1"
+  }
+}

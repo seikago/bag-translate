@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextRequest, NextResponse } from "next/server";
 
 const SCENE_PROMPTS: Record<string, string> = {
@@ -25,21 +27,32 @@ export async function POST(req: NextRequest) {
 3. 点评格式：【点评】语法/用词建议...（如果用户还没回复则跳过点评）
 4. 对话进行6-8轮后，给出总体评分（满分10分）和改进建议`;
 
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": process.env.ANTHROPIC_API_KEY || "",
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: "claude-3-5-sonnet-20241022",
-      max_tokens: 1024,
-      system: systemPrompt,
-      messages,
-    }),
-  });
+  try {
+    const response = await fetch("https://breakout.wenwen-ai.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": "sk-wAjBr8yBYfWgNK1c23k0rbiADpFbFgJiW1lZ7gkJ32tDBk1Z",
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-6-20260218",
+        max_tokens: 1024,
+        system: systemPrompt,
+        messages,
+      }),
+    });
 
-  const data = await response.json();
-  return NextResponse.json({ content: data.content?.[0]?.text || "エラーが発生しました。" });
+    if (!response.ok) {
+      const err = await response.text();
+      return NextResponse.json({ content: `Error ${response.status}: ${err.slice(0, 200)}` });
+    }
+
+    const data = await response.json();
+    const content = data.content?.[0]?.text || "エラーが発生しました。";
+    return NextResponse.json({ content });
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : String(e);
+    return NextResponse.json({ content: `Network error: ${msg}` });
+  }
 }
